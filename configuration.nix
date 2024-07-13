@@ -127,8 +127,6 @@
     git
     bash-completion
     tmux
-    tmuxPlugins.sensible
-    tmuxPlugins.yank
     wget
     fzf
     jq
@@ -239,7 +237,7 @@
     # Automatically start tmux if not already inside a tmux session
     if command -v tmux &> /dev/null; then
       if [ -z "$TMUX" ]; then
-        tmux attach-session -t main || tmux new-session -s main
+        tmux attach-session -t main 2>/dev/null || tmux new-session -s main 2>/dev/null
       fi
     fi
   '';
@@ -282,6 +280,8 @@
     bind % split-window -h -c "#{pane_current_path}"
 
     # Set plugins after configuration
+    run-shell ${pkgs.tmuxPlugins.sensible}/share/tmux-plugins/sensible/sensible.tmux
+    run-shell ${pkgs.tmuxPlugins.yank}/share/tmux-plugins/yank/yank.tmux
     run-shell ${pkgs.tmuxPlugins.catppuccin}/share/tmux-plugins/catppuccin/catppuccin.tmux
   '';
 
