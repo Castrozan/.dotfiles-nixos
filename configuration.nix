@@ -125,6 +125,7 @@
     # Utils begin
     vim
     git
+    bash-completion
     tmux
     wget
     fzf
