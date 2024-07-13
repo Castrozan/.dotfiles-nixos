@@ -163,6 +163,11 @@
     # Apps end
   ];
 
+  # Set up fonts
+  fonts.packages = with pkgs; [
+    (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
+  ];
+
   # Setting up global Bash configuration
   environment.etc."bashrc".text = ''
     # ~/.bashrc: executed by bash(1) for non-login shells.
