@@ -230,6 +230,13 @@
     alias la='ls -A'
     alias l='ls -CF'
     alias lc='ls -a --color=never'
+
+    # Automatically start tmux if not already inside a tmux session
+    if command -v tmux &> /dev/null; then
+      if [ -z "$TMUX" ]; then
+        tmux attach-session -t main || tmux new-session -s main
+      fi
+    fi
   '';
 
   # Optional: Create a global tmux configuration file
