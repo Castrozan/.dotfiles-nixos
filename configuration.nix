@@ -127,6 +127,8 @@
     git
     bash-completion
     tmux
+    tmuxPlugins.sensible
+    tmuxPlugins.yank
     wget
     fzf
     jq
@@ -232,10 +234,43 @@
 
   # Optional: Create a global tmux configuration file
   environment.etc."tmux.conf".text = ''
-    # Example tmux configuration
+    set-option -sa terminal-overrides ",xterm*:Tc"
+
     set -g mouse on
-    #setw -g mode-keys vi
-    #bind r source-file ~/.tmux.conf \; display-message "Config reloaded"
+
+    # Start panes and windows at 1
+    set -g base-index 1
+    set -g pane-base-index 1
+    set-window-option -g pane-base-index 1
+    set-option -g renumber-windows on
+
+    # Set pane name
+    set -g @catppuccin_pane_status_enabled "yes"
+    set -g @catppuccin_pane_border_status "top"
+    set -g @catppuccin_pane_left_separator " "
+    set -g @catppuccin_pane_right_separator " "
+    set -g @catppuccin_pane_middle_separator " "
+    set -g @catppuccin_pane_number_position "left"
+    set -g @catppuccin_pane_default_fill "number"
+    set -g @catppuccin_pane_default_text "#T"
+    set -g @catppuccin_pane_border_style "fg=#{thm_blue}"
+    set -g @catppuccin_pane_active_border_style "fg=#{thm_orange}"
+    set -g @catppuccin_pane_color "fg=#{thm_blue}"
+    set -g @catppuccin_pane_background_color "fg=#{thm_bg}"
+
+    # Set window name
+    set -g @catppuccin_window_current_text "#W"
+    set -g @catppuccin_window_default_text "#W"
+
+    # Bind ctrl + b, r to rename pane
+    bind r command-prompt "select-pane -T '%%'"
+
+    # Open panes in the same directory as the current pane
+    bind '"' split-window -v -c "#{pane_current_path}"
+    bind % split-window -h -c "#{pane_current_path}"
+
+    # Set plugins after configuration
+    run-shell ${pkgs.tmuxPlugins.catppuccin}/share/tmux-plugins/catppuccin/catppuccin.tmux
   '';
 
   services.xserver.wacom.enable = true;
