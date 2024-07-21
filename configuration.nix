@@ -138,6 +138,7 @@
     # Utils end
 
     # Apps begin
+    scrcpy
     vscode
     obsidian
     brave
@@ -145,7 +146,6 @@
     (opera.override { 
       proprietaryCodecs = true; 
     })
-    steam
     # NordVpn Wireguard client
       # Should install manually rn from github.com/phirecc/wgnord
     wgnord
@@ -233,13 +233,6 @@
     alias la='ls -A'
     alias l='ls -CF'
     alias lc='ls -a --color=never'
-
-    # Automatically start tmux if not already inside a tmux session
-    if command -v tmux &> /dev/null; then
-      if [ -z "$TMUX" ]; then
-        tmux attach-session -t main 2>/dev/null || tmux new-session -s main 2>/dev/null
-      fi
-    fi
   '';
 
   # Optional: Create a global tmux configuration file
@@ -284,6 +277,9 @@
     run-shell ${pkgs.tmuxPlugins.yank}/share/tmux-plugins/yank/yank.tmux
     run-shell ${pkgs.tmuxPlugins.catppuccin}/share/tmux-plugins/catppuccin/catppuccin.tmux
   '';
+
+  # Enable steam
+  programs.steam.enable = true;
 
   services.xserver.wacom.enable = true;
 
