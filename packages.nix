@@ -12,12 +12,15 @@
     git
     bash-completion
     tmux
+    neovim
     wget
     fzf
     jq
+    # TODO: check if this is the correct package
     wireguard-go
     direnv
     nixpkgs-fmt
+    # NordVpn Wireguard client
     linuxKernel.packages.linux_5_4.wireguard
     wireguard-tools
     ffmpeg
@@ -37,7 +40,6 @@
         proprietaryCodecs = true;
       }
     )
-    # NordVpn Wireguard client
     # Should install manually rn from github.com/phirecc/wgnord
     wgnord
     # Discord and vesktop to enable screensharing on wayland
