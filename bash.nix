@@ -62,10 +62,23 @@
         alias egrep='egrep --color=auto'
     fi
 
-    # Some more ls aliases
+    # BEGIN ENV VARIABLES
+    export OBSIDIAN_HOME="$HOME/obsidianVault"
+    export EDITOR="code"
+    # END ENV VARIABLES
+
+    # BEGIN ALIASES
+
+    # aliases personal
     alias ll='ls -alF'
     alias la='ls -A'
     alias l='ls -CF'
-    alias lc='ls -a --color=never'
+    alias oo="cd $OBSIDIAN_HOME"
+    alias lc="ls -a --color=never"
+    alias dotfiles="cd ~/.dotfiles-nixos"
+    alias rebuild="sudo nixos-rebuild switch"
+    alias t="tmux"
+    alias todo="code $OBSIDIAN_HOME -g $OBSIDIAN_HOME/TODO.md"
+    # END ALIASES
   '';
 }
