@@ -9,13 +9,10 @@
     [
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
-
-      # Include packages
       ./packages.nix
     ];
 
   # BEGIN SYSTEM CONFIGURATION
-
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -83,8 +80,11 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
-
   # END SYSTEM CONFIGURATION
+
+
+
+
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.nix = {
