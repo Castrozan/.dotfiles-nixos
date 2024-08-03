@@ -4,6 +4,8 @@
   environment.etc."tmux.conf".text = ''
     set-option -sa terminal-overrides ",xterm*:Tc"
 
+    set -g set-clipboard on
+
     set -g mouse on
 
     # Start panes and windows at 1
@@ -38,8 +40,9 @@
     bind % split-window -h -c "#{pane_current_path}"
 
     # Set plugins after configuration
-    run-shell ${pkgs.tmuxPlugins.sensible}/share/tmux-plugins/sensible/sensible.tmux
+    # TODO: yank not working
     run-shell ${pkgs.tmuxPlugins.yank}/share/tmux-plugins/yank/yank.tmux
+    run-shell ${pkgs.tmuxPlugins.sensible}/share/tmux-plugins/sensible/sensible.tmux
     run-shell ${pkgs.tmuxPlugins.catppuccin}/share/tmux-plugins/catppuccin/catppuccin.tmux
   '';
 }

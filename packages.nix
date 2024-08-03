@@ -29,6 +29,8 @@
     gh
     lazygit
     lazydocker
+    # tmux yank depends on xsel
+    xsel
     # UTILS END
 
     # APPS BEGIN
