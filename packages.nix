@@ -4,6 +4,7 @@
     ./bash.nix
     ./tmux.nix
     ./neovim.nix
+    ./vscode.nix
   ];
 
   # List packages installed in system profile. To search, run: nix search wget
@@ -33,7 +34,6 @@
     # APPS BEGIN
     kitty
     scrcpy
-    vscode
     obsidian
     brave
     firefox
