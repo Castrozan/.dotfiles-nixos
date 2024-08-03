@@ -3,6 +3,7 @@
   imports = [
     ./bash.nix
     ./tmux.nix
+    ./neovim.nix
   ];
 
   # List packages installed in system profile. To search, run: nix search wget

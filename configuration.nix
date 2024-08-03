@@ -11,6 +11,7 @@
       ./hardware-configuration.nix
       ./packages.nix
       ./scripts.nix
+      ./env.nix
     ];
 
   # BEGIN SYSTEM CONFIGURATION
