@@ -26,9 +26,12 @@
     wireguard-tools
     ffmpeg
     gh
+    lazygit
+    lazydocker
     # UTILS END
 
     # APPS BEGIN
+    kitty
     scrcpy
     vscode
     obsidian
