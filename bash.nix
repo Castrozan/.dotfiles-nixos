@@ -79,6 +79,30 @@
     alias rebuild="sudo nixos-rebuild switch"
     alias t="tmux"
     alias todo="code $OBSIDIAN_HOME -g $OBSIDIAN_HOME/TODO.md"
+    alias g="lazygit"
+    alias d="lazydocker"
+    alias nvm="nvim"
+    alias vnm="nvim"
     # END ALIASES
+
+    # BEGIN CASE INSENSITIVE TAB COMPLETION
+    # If ~/.inputrc doesn't exist yet: First include the original /etc/inputrc
+    # so it won't get overriden
+    if [ ! -a ~/.inputrc ]; then echo '$include /etc/inputrc' > ~/.inputrc; fi
+
+    # Add shell-option to ~/.inputrc to enable case-insensitive tab completion
+    echo 'set completion-ignore-case On' >> ~/.inputrc
+    # END CASE INSENSITIVE TAB COMPLETION
+
+    # BEGIN GIT ALIASES
+    alias gs='git status'
+    alias gd='git diff'
+    alias gl='git log'
+    alias gc='git checkout'
+    alias gp='git push'
+    alias gpl='git pull'
+    alias gadd='git add .'
+    alias dotcommit="git add . && git commit -m '.'"
+    # END GIT ALIASES
   '';
 }
