@@ -34,11 +34,11 @@
 
     # Show current git branch in prompt
     parse_git_branch() {
-        git branch 2>/dev/null | sed -n -e 's/^\* \(.*\)/ (\1)/p'
+        git branch 2>/dev/null | grep -e '^*' | sed 's/* \(.*\)/ (\1)/'
     }
 
     if [ "$color_prompt" = yes ]; then
-        PS1="\[\e]0\[\033[01;32m\]\u\[\033[00m\]\[\033[01;34m\] \W\[\033[00m\]\[\033[01;1;38;2;253;200;169m\]\$(parse_git_branch)\[\033[00m\]\$ "
+        PS1="\[\e]0;\u@\h: \w\007\]\[\033[01;32m\]\u\[\033[00m\]\[\033[01;34m\] \W\[\033[00m\]\[\033[01;1;38;2;253;200;169m\]\$(parse_git_branch)\[\033[00m\]\$ "
     else
         PS1='\u@\h:\w\$(parse_git_branch)\$ '
     fi
@@ -83,6 +83,8 @@
     alias d="lazydocker"
     alias nvm="nvim"
     alias vnm="nvim"
+    alias v="nvim"
+    alias kc="nvim ~/.config/kitty/kitty.conf"
     # END ALIASES
 
     # BEGIN CASE INSENSITIVE TAB COMPLETION
@@ -104,5 +106,8 @@
     alias gadd='git add .'
     alias dotcommit="git add . && git commit -m '.'"
     # END GIT ALIASES
+
+    # Set a random background image in Kitty
+    [ -n "$KITTY_WINDOW_ID" ] && set-random-bg-kitty
   '';
 }
