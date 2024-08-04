@@ -19,6 +19,7 @@
     wget
     fzf
     jq
+    neofetch
     # TODO: check if this is the correct package
     wireguard-go
     direnv
