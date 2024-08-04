@@ -5,6 +5,7 @@
     ./tmux.nix
     ./neovim.nix
     ./vscode.nix
+    # ./kitty.nix
   ];
 
   # List packages installed in system profile. To search, run: nix search wget
@@ -34,6 +35,7 @@
     # UTILS END
 
     # APPS BEGIN
+    # TODO: Config kitty
     kitty
     scrcpy
     obsidian
