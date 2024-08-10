@@ -12,6 +12,7 @@
       ./packages.nix
       ./scripts.nix
       ./env.nix
+      ./virtualization.nix
     ];
 
   # BEGIN SYSTEM CONFIGURATION
