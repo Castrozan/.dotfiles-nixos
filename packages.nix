@@ -38,6 +38,7 @@
     # APPS BEGIN
     # TODO: Config kitty
     kitty
+    docker
     scrcpy
     obsidian
     brave
