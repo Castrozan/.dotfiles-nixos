@@ -107,7 +107,9 @@
     alias dotcommit="git add . && git commit -m '.'"
     # END GIT ALIASES
 
-    # Set a random background image in Kitty
-    [ -n "$KITTY_WINDOW_ID" ] && set-random-bg-kitty
+    # Set random background image in Kitty terminal
+    if ps aux | grep "[k]itty" > /dev/null; then
+        [ -n "$KITTY_WINDOW_ID" ] && set-random-bg-kitty
+    fi
   '';
 }
