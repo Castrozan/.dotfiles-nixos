@@ -29,6 +29,8 @@
     wireguard-tools
     ffmpeg
     gh
+    azure-cli
+    terraform
     lazygit
     lazydocker
     # tmux yank depends on xsel
