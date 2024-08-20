@@ -86,6 +86,7 @@
     alias v="nvim"
     alias kc="nvim ~/.config/kitty/kitty.conf"
     alias repo="cd ~/repo"
+    alias code="code . -n"
     # END ALIASES
 
     # BEGIN CASE INSENSITIVE TAB COMPLETION
