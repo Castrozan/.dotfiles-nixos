@@ -16,6 +16,7 @@
     bash-completion
     tmux
     neovim
+    htop
     wget
     fzf
     jq
