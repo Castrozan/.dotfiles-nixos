@@ -15,6 +15,8 @@
     git
     bash-completion
     tmux
+    usbutils
+    dbeaver-bin
     neovim
     htop
     wget
