@@ -21,6 +21,8 @@
     htop
     wget
     fzf
+    # see hardware info
+    lshw
     jq
     neofetch
     # TODO: check if this is the correct package
