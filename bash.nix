@@ -113,5 +113,12 @@
     if ps aux | grep "[k]itty" > /dev/null; then
         [ -n "$KITTY_WINDOW_ID" ] && set-random-bg-kitty
     fi
+
+    # Launch Steam in offload mode
+    export XDG_DATA_HOME="$HOME/.local/share"
+
+    # Ensure Steam runs with NVIDIA GPU offloading
+    mkdir -p "$XDG_DATA_HOME/applications"
+    sed 's/^Exec=/&nvidia-offload /' /run/current-system/sw/share/applications/steam.desktop > "$XDG_DATA_HOME/applications/steam.desktop"
   '';
 }

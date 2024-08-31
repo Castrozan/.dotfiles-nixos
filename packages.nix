@@ -6,6 +6,7 @@
     ./neovim.nix
     ./vscode.nix
     ./kitty.nix
+    ./steam.nix
   ];
 
   # List packages installed in system profile. To search, run: nix search wget
@@ -50,7 +51,6 @@
     obsidian
     brave
     firefox
-    steam
     # Set opera to use its codecs. This enables it to display videos
     (
       opera.override {
