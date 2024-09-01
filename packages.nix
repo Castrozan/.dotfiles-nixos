@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
+    ./scripts.nix
     ./bash.nix
     ./tmux.nix
     ./neovim.nix
