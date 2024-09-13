@@ -17,6 +17,7 @@
     git
     bash-completion
     tmux
+    yazi
     usbutils
     dbeaver-bin
     neovim
