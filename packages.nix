@@ -22,6 +22,7 @@
     dbeaver-bin
     neovim
     htop
+    btop
     wget
     fzf
     # see hardware info
@@ -37,6 +38,8 @@
     wireguard-tools
     ffmpeg
     gh
+    unzip
+    zip
     azure-cli
     terraform
     lazygit
