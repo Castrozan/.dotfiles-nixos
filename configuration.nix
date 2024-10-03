@@ -58,8 +58,8 @@
 
   # Configure keymap in X11
   services.xserver = {
-    layout = "br";
-    xkbVariant = "nodeadkeys";
+    xkb.layout = "br";
+    xkb.variant = "nodeadkeys";
   };
 
   # Configure console keymap
@@ -104,7 +104,7 @@
   };
 
   # Enable OpenGL
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
   };
 
