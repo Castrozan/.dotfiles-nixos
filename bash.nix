@@ -76,7 +76,7 @@
     alias oo="cd $OBSIDIAN_HOME"
     alias lc="ls -a --color=never"
     alias dotfiles="cd ~/.dotfiles-nixos"
-    alias rebuild="sudo nixos-rebuild switch"
+    alias rebuild="sudo nixos-rebuild switch --flake /home/zanoni/.dotfiles-nixos#zanoni --impure"
     alias t="tmux"
     alias todo="code $OBSIDIAN_HOME -g $OBSIDIAN_HOME/TODO.md"
     alias g="lazygit"

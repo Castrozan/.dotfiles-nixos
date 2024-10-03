@@ -5,14 +5,13 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [
-      # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./packages.nix
-      ./env.nix
-      ./virtualization.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    /etc/nixos/hardware-configuration.nix
+    ./packages.nix
+    #./env.nix
+    #./virtualization.nix
+  ];
 
   # BEGIN SYSTEM CONFIGURATION
   # Bootloader.
@@ -96,9 +95,9 @@
 
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.nix = {
+  users.users.zanoni = {
     isNormalUser = true;
-    description = "nix";
+    description = "zanoni";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
     ];
@@ -159,7 +158,16 @@
 
   # Set up fonts
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
+    noto-fonts
+    noto-fonts-cjk
+    noto-fonts-emoji
+    liberation_ttf
+    fira-code
+    fira-code-symbols
+    mplus-outline-fonts.githubRelease
+    dina-font
+    proggyfonts
+    nerdfonts
   ];
 
   # Comentarrrr

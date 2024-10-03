@@ -10,7 +10,7 @@
     # This is required for containers which are created with the `--restart=always` flag to work.
     enableOnBoot = true;
   };
-  users.extraGroups.docker.members = [ "nix" ];
+  users.extraGroups.docker.members = [ "zanoni" ];
 
   # Virt-Manager
   # From https://github.com/TechsupportOnHold/Nixos-VM
@@ -18,7 +18,7 @@
   programs.dconf.enable = true;
 
   # Add user to libvirtd group
-  users.users.nixos.extraGroups = [ "libvirtd" ];
+  users.users.zanoni.extraGroups = [ "libvirtd" ];
 
   # Install necessary packages
   environment.systemPackages = with pkgs; [
